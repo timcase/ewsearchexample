@@ -1,0 +1,7 @@
+<div>
+<h2><%= search_result.name %></h2>
+<p><%= search_result.location.location %></p>
+<% search_result.images.each do |image| %>
+  <%= image_tag  image.url %>
+<% end %>
+</div>

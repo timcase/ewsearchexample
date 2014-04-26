@@ -1,0 +1,17 @@
+<h1>Echowrap Artist Search Example</h1>
+<div>
+<%= form_tag url: '/searches' do %>
+  <label>Search Artist:</label>
+  <%= text_field_tag 'keyword', '' %>
+  <%= submit_tag 'Submit' %>
+<% end %>
+</div>
+<% if @search_term %>
+  <div>
+  <% if @artists.any? %>
+    <%= render partial: 'search_result', collection: @artists %>
+  <% else %>
+    No results were returned for '<%= @search_term %>'
+  <% end %>
+  </div>
+<% end %>
